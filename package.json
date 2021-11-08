@@ -1,0 +1,28 @@
+{
+  "name": "manage-my-techteam",
+  "version": "1.0.0",
+  "description": "Node.js CLI app that collects information about a manager's employees on a software engineering team, and generates an HTML webpage with employee summaries for each team member.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderjake91/manage-my-techTeam.git"
+  },
+  "keywords": [
+    "Node"
+  ],
+  "author": "coderjake91",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coderjake91/manage-my-techTeam/issues"
+  },
+  "homepage": "https://github.com/coderjake91/manage-my-techTeam#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
