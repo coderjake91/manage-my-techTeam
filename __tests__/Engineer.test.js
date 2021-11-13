@@ -19,46 +19,46 @@ methods:
 */
 
 
-//check for the correct creation of a Player object
+//check for the correct creation of a Engineer object
 test('creates an engineer object', () => {
-    const engineer = new Engineer('Nina');
+    const engineer = new Engineer('Nina', 2, 'Nina@email.com', 'codernina');
 
     //check for the creation of the Engineer object properties
     expect(engineer.name).toBe('Nina');
     expect(engineer.id).toEqual(expect.any(Number));
     //use Jest expect string matching method that compares the string to a regex expression (email matching)
-    expect(engineer.email).stringMatching(engineer.email | /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+    expect(engineer.email).toEqual(expect.stringMatching(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/));
     expect(engineer.github).toEqual(expect.any(String));
 });
 
 //check for the correct retrieval of the Engineer's name
 test('gets the engineer name', () => {
-    const engineer = new Engineer('Nina');
+    const engineer = new Engineer('Nina', 2, 'Nina@email.com', 'codernina');
 
     expect(engineer.getName()).toBe('Nina');
 });
 //check for the correct retrieval of the Engineer's Id
 test('gets the engineer Id', () => {
-    const engineer = new Engineer('Nina');
+    const engineer = new Engineer('Nina', 2, 'Nina@email.com', 'codernina');
 
     expect(engineer.getId()).toEqual(engineer.id);
 });
 //check for the correct retrieval of the Engineer's valid email
 test('gets the engineer email', () => {
-    const engineer = new Engineer('Nina');
+    const engineer = new Engineer('Nina', 2, 'Nina@email.com', 'codernina');
 
     expect(engineer.getEmail()).toEqual(engineer.email);
 });
 //check for the correct retrieval of the Engineer's role (should be "Engineer")
 test('get the engineer role', () => {
-    const engineer = new Engineer('Nina');
+    const engineer = new Engineer('Nina', 2, 'Nina@email.com', 'codernina');
 
     expect(engineer.getRole()).toBe('Engineer');
 });
 
 //check for the correct retrieval of the Engineer's github username
 test("get the engineer's github username", () => {
-    const engineer = new Engineer('Nina');
+    const engineer = new Engineer('Nina', 2, 'Nina@email.com', 'codernina');
 
     expect(engineer.getGithub()).toEqual(engineer.github);
 });

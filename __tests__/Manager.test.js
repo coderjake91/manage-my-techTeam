@@ -18,39 +18,39 @@ methods:
 */
 
 
-//check for the correct creation of a Player object
+//check for the correct creation of a Manager object
 test('creates an Manager object', () => {
-    const manager = new Manager('Bob');
+    const manager = new Manager('Bob', 4, 'Bob@email.com', '512.999.9999');
 
     //check for the creation of the Manager object properties
     expect(manager.name).toBe('Bob');
     expect(manager.id).toEqual(expect.any(Number));
     //use Jest expect string matching method that compares the string to a regex expression (email matching)
-    expect(manager.email).stringMatching(manager.email | /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+    expect(manager.email).toEqual(expect.stringMatching(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/));
     expect(manager.officeNumber).toEqual(expect.any(String));
 });
 
 //check for the correct retrieval of the Manager's name
 test('gets the manager name', () => {
-    const manager = new Manager('Bob');
+    const manager = new Manager('Bob', 4, 'Bob@email.com', '512.999.9999');
 
     expect(manager.getName()).toBe('Bob');
 });
 //check for the correct retrieval of the Manager's Id
 test('gets the manager Id', () => {
-    const manager = new Manager('Bob');
+    const manager = new Manager('Bob', 4, 'Bob@email.com', '512.999.9999');
 
     expect(manager.getId()).toEqual(manager.id);
 });
 //check for the correct retrieval of the Manager's valid email
 test('gets the manager email', () => {
-    const manager = new Manager('Bob');
+    const manager = new Manager('Bob', 4, 'Bob@email.com', '512.999.9999');
 
     expect(manager.getEmail()).toEqual(manager.email);
 });
 //check for the correct retrieval of the Manager's role (should be "Manager")
 test('get the manager role', () => {
-    const manager = new Manager('Bob');
+    const manager = new Manager('Bob', 4, 'Bob@email.com', '512.999.9999');
 
     expect(manager.getRole()).toBe('Manager');
 });
